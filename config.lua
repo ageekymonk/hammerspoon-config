@@ -7,7 +7,8 @@ config.modules = {
     "reload",
     "arrows",
     "lock",
-    "fullscreen"
+    "fullscreen",
+    "winmgmt"
 }
 
 -- Maps monitor id -> screen index.
