@@ -6,7 +6,7 @@ local function module_init()
   local key = config:get("lock.key", lock_keys[2])
 
   hotkey.bind(mash, key, function()
-                os.execute("/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend")
+                os.execute("pmset displaysleepnow")
   end)
 
 end

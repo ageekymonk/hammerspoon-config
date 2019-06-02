@@ -42,5 +42,13 @@ table.insert(buf, #modules .. " modules.")
 
 alert.show(table.concat(buf))
 
-
-
+function emacsclientWatcher(appName, eventType, appObject)
+  if (eventType == hs.application.watcher.activated) then
+    if (appName == "EmacsClient") then
+      -- Bring Emacs to Front
+      hs.osascript.applescript('tell application "Emacs" to activate')
+    end
+  end
+end
+appWatcher = hs.application.watcher.new(emacsclientWatcher)
+appWatcher:start()
